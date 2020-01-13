@@ -45,14 +45,14 @@ Summary:
         return False
 
     while x > 0:
-        var -= 1
+        x -= 1
     ```
   - No:
 
     ```python
     if condition: return False
 
-    while x != 0: x -= 1
+    while x > 0: x -= 1
     ```
 
 ## <a name="py-style-naming"></a>Naming
