@@ -19,7 +19,7 @@ Summary:
   ```python
   # This is a comment.
 
-  def AddFunction(x: int, y: int):
+  def addFunction(x: int, y: int):
       '''
       Function
       Adds x and y together.
@@ -31,7 +31,7 @@ Summary:
   - No:
   ```python
   ''' This is a comment. '''
-  def AddFunction(x: int, y: int)::
+  def addFunction(x: int, y: int)::
       # Adds x and y.
       return x + y
   ```
@@ -54,9 +54,10 @@ Summary:
     ```
 
 ## <a name="py-style-naming"></a>Naming
-- All class and function names should be in upper CamelCase. If the name contains an abbreviation uppercase it.
+- All class names should be in upper CamelCase. If the name contains an abbreviation uppercase it.
   - `class SomeClassName():`
-  - `def AddFunction(x: int, y: int):`
+- Function names should use regular camelCase. Once again, if there is an abbrevation make it uppercase.
+  - `def addFunction(x: int, y: int):`
 - All constants, such as tuples, should be fully uppercased. With constants that have more than one word in them, use an underscore to separate them.
   - `PI = 3.14159`
   - `ACE_OF_SPADES = (1, 'spades')`
@@ -107,12 +108,16 @@ Summary:
         def __init__(self):
             self.variable_a = 1
             self.variable_b = 2
-        def GetVariableA():
+
+        def getVariableA():
             return self.variable_a
-        def SetVariableA(value):
+
+        def setVariableA(value):
             self.variable_a = value
-        def GetVariableB():
+
+        def getVariableB():
             return self.variable_b
-        def SetVariableB(value):
+
+        def setVariableB(value):
             self.variable_b = value
     ```
