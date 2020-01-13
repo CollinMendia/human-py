@@ -11,8 +11,6 @@ Summary:
 - Try to limit lines of code to a maximum of 70 characters.
     - Note that this does not mean you should try and use all 70 characters every time you have the chance. Typically with well formatted code, you normally shouldn't hit a line count of anything over 50 or 60 characters.
 - The indentation style we use is 4 spaces per level.
-- The opening brace for namespaces, classes, functions, enums, structs, unions, conditionals, and loops go on the next line.
-  - With array initializer lists and lambda expressions it is OK to keep the brace on the same line.
 - Math operators and equals should have spaces. `x = 3 + 4` not `x=3+4`.
 - Don't use multi-line comments (`''' Comment text '''`), use single-line comments (`# Comment text`) instead.
   - Multiline comments are accepted for elaborate descriptions of functions.
