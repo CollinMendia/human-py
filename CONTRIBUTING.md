@@ -61,7 +61,7 @@ Summary:
   - `def AddFunction(x: int, y: int):`
 - All constants, such as tuples, should be fully uppercased. With constants that have more than one word in them, use an underscore to separate them.
   - `PI = 3.14159`
-  - `CARD = (1, 'spades')`
+  - `ACE_OF_SPADES = (1, 'spades')`
 - All variables should be lowercase with underscores separating the individual words in the name.
   - `this_variable_name = 'abc123'`
 - Class self variables should be named `self`.
