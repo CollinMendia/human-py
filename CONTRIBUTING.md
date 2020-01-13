@@ -70,14 +70,14 @@ Summary:
   ```python
   class ThisClass():
       def __init__(self):
-        pass
+          pass
   ```
   - No:
 
   ```python
   def ThisClass():
       def __init__(this):
-        pass
+          pass
   ```
 
 ## <a name="py-style-conditionals"></a>Conditionals
