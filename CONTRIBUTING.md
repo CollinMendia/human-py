@@ -32,7 +32,7 @@ Summary:
   ```
   - No:
   ```python
-  '''This is a comment.'''
+  ''' This is a comment. '''
   def AddFunction(x: int, y: int)::
       # Adds x and y.
       return x + y
