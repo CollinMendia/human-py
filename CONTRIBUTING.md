@@ -4,7 +4,7 @@ Summary:
 
 - [General](#py-style-general)
 - [Naming](#py-style-naming)
-- [Conditionals](#py-style-conditionals)
+- [Conditionals and Loops](#py-style-conditionals)
 - [Classes](#py-style-classes)
 
 ## <a name="py-style-general"></a>General
