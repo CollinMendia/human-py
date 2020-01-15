@@ -35,24 +35,6 @@ Summary:
       # Adds x and y.
       return x + y
   ```
-- Don't collapse single line conditional or loop bodies onto the same line as its header. Put it on the next line.
-  - Yes:
-
-    ```python
-    if condition:
-        return False
-
-    while x > 0:
-        x -= 1
-    ```
-  - No:
-
-    ```python
-    if condition: return False
-
-    while x > 0: x -= 1
-    ```
-
 ## <a name="py-style-naming"></a>Naming
 - All class names should be in upper CamelCase. If the name contains an abbreviation uppercase it.
   - `class SomeClassName():`
@@ -74,29 +56,31 @@ Summary:
   - No:
 
   ```python
-  def ThisClass():
+  class ThisClass():
       def __init__(this):
           pass
   ```
 
-## <a name="py-style-conditionals"></a>Conditionals
-- In most cases, use `else if` instead of `elif`. (`elif` is still okay but is not as clear.)
+## <a name="py-style-conditionals"></a>Conditionals and Loops
+- Don't collapse single line conditional or loop bodies onto the same line as its header. Put it on the next line.
   - Yes:
 
     ```python
     if condition:
-        return True
-    else if:
         return False
+
+    while x > 0:
+        x -= 1
     ```
-  - Acceptable in some cases:
+  - No:
 
     ```python
-    if condition:
-        return True
-    elif:
-        return False
+    if condition: return False
+
+    while x > 0: x -= 1
     ```
+
+
 
 ## <a name="py-style-classes"></a>Classes
 - As mentioned above, name classes in upper CamelCase and call the self variable `self`.
