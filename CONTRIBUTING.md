@@ -92,30 +92,23 @@ Summary:
             self.variable_a = 1
             self.variable_b = 2
 
-        def getVariableA():
+        def getVariableA(self):
             return self.variable_a
 
-        def setVariableA(value):
+        def setVariableA(self, value):
             self.variable_a = value
 
-        def getVariableB():
+        def getVariableB(self):
             return self.variable_b
 
-        def setVariableB(value):
+        def setVariableB(self, value):
             self.variable_b = value
     ```
 - Enumerations should also be named in upper CamelCase. Enum members should be named in all caps with underscores.
-  - Yes:
+  - Example:
   
   ```python
   from enum import Enum
   class Enumeration(Enum):
     ENUM_MEMBER = 0
-  ```
-  - No:
-  
-  ```python
-  from enum import Enum
-  class enumeration(Enum):
-    enum_member = 0
   ```
