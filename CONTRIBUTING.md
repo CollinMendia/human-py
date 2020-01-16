@@ -2,12 +2,12 @@
 
 Summary:
 
-- [General](#py-style-general)
-- [Naming](#py-style-naming)
+- [General Rules](#py-style-general)
+- [Naming Scheme](#py-style-naming)
 - [Conditionals and Loops](#py-style-conditionals)
-- [Classes](#py-style-classes)
+- [Classes and Enumerations](#py-style-classes)
 
-## <a name="py-style-general"></a>General
+## <a name="py-style-general"></a>General Rules
 - Try to limit lines of code to a maximum of 70 characters.
     - Note that this does not mean you should try and use all 70 characters every time you have the chance. Typically with well formatted code, you normally shouldn't hit a line count of anything over 50 or 60 characters.
 - The indentation style we use is 4 spaces per level.
@@ -35,14 +35,15 @@ Summary:
       # Adds x and y.
       return x + y
   ```
-## <a name="py-style-naming"></a>Naming
+## <a name="py-style-naming"></a>Naming Scheme
 - All class names should be in upper CamelCase. If the name contains an abbreviation uppercase it.
   - `class SomeClassName():`
 - Function names should use regular camelCase. Once again, if there is an abbrevation make it uppercase.
   - `def addFunction(x: int, y: int):`
-- All constants, such as tuples, should be fully uppercased. With constants that have more than one word in them, use an underscore to separate them.
+- All constants, such as tuples, should be fully uppercased. With constants that have more than one word in them, use an underscore to separate them. Same with Enum variables.
   - `PI = 3.14159`
   - `ACE_OF_SPADES = (1, 'spades')`
+ 
 - All variables should be lowercase with underscores separating the individual words in the name.
   - `this_variable_name = 'abc123'`
 - Class self variables should be named `self`.
@@ -80,9 +81,7 @@ Summary:
     while x > 0: x -= 1
     ```
 
-
-
-## <a name="py-style-classes"></a>Classes
+## <a name="py-style-classes"></a>Classes and Enumerations
 - As mentioned above, name classes in upper CamelCase and call the self variable `self`.
 - Create getters and setters for each class variable.
   - Setters should use `value` as the parameter name.
@@ -105,3 +104,18 @@ Summary:
         def setVariableB(value):
             self.variable_b = value
     ```
+- Enumerations should also be named in upper CamelCase. Enum members should be named in all caps with underscores.
+  - Yes:
+  
+  ```python
+  from enum import Enum
+  class Enumeration(Enum):
+    ENUM_MEMBER = 0
+  ```
+  - No:
+  
+  ```python
+  from enum import Enum
+  class enumeration(Enum):
+    enum_member = 0
+  ```
