@@ -43,7 +43,7 @@ Summary:
 - All constants, such as tuples, should be fully uppercased. With constants that have more than one word in them, use an underscore to separate them. Same with Enum variables.
   - `PI = 3.14159`
   - `ACE_OF_SPADES = (1, 'spades')`
- 
+
 - All variables should be lowercase with underscores separating the individual words in the name.
   - `this_variable_name = 'abc123'`
 - Class self variables should be named `self`.
@@ -83,32 +83,67 @@ Summary:
 
 ## <a name="py-style-classes"></a>Classes and Enumerations
 - As mentioned above, name classes in upper CamelCase and call the self variable `self`.
-- Create getters and setters for each class variable.
-  - Setters should use `value` as the parameter name.
+- Create each class variable as a property instead of using getters and setters.
+  - In order for the properties to work, variables must be declared as private by prefixing them with `__`.
+  - Yes:
 
-    ```python
-    class ExampleClass():
-        def __init__(self):
-            self.variable_a = 1
-            self.variable_b = 2
+  ```python
+  class ExampleClass:
 
-        def getVariableA(self):
-            return self.variable_a
+      def __init__(self):
+          self.__variable_a = 1
+          self.__variable_b = 2
 
-        def setVariableA(self, value):
-            self.variable_a = value
+      @property
+      def variable_a(self):
+          return self.__variable_a
+      @variable_a.setter
+      def variable_a(self, variable_a):
+          self.__variable_a = variable_a
 
-        def getVariableB(self):
-            return self.variable_b
+      @property
+      def variable_b(self):
+          return self.__variable_b
+      @variable_b.setter
+      def variable_b(self, variable_b):
+          self.__variable_b = variable_b
 
-        def setVariableB(self, value):
-            self.variable_b = value
-    ```
+  test = ExampleClass()
+  test.variable_a += 5
+  print(test.variable_a) # Prints 6
+  ```
+  - No:
+
+  ```python
+  class ExampleClass:
+
+      def __init__(self):
+          self.variable_a = 1
+          self.variable_b = 2
+
+      def getVariableA(self):
+          return self.variable_a
+
+      def setVariableA(self, value):
+          self.variable_a = value
+
+      def getVariableB(self):
+          return self.variable_b
+
+      def setVariableB(self, value):
+          self.variable_b = value
+
+  test = ExampleClass()
+  test.setVariableA(test.getVariableA() + 5)
+  print(test.getVariableA()) # Also prints 6
+  ```
 - Enumerations should also be named in upper CamelCase. Enum members should be named in all caps with underscores.
   - Example:
-  
+
   ```python
   from enum import Enum
-  class Enumeration(Enum):
-    ENUM_MEMBER = 0
+  class Colours(Enum):  # UK spelling
+    RED   = 0xFF0000
+    GREEN = 0x00FF00
+    BLUE  = 0x0000FF
   ```
